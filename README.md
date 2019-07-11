@@ -8,4 +8,6 @@ This tool will be setup for use with firebase, how ever, all database transactio
 
 ## Release History
 
+Latest Version: In Development
+
 ## Contact Us

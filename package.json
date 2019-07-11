@@ -4,6 +4,7 @@
     "description": "Generates an Angular application with a blogging feature setup and ready to be deployed to firebase.",
     "main": "index.js",
     "scripts": {
+        "patch": "git add -A && git commit -m 'patching update to npm' && git push && npm version patch && npm publish",
         "test": "echo test"
     },
     "repository": {

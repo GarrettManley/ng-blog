@@ -3,6 +3,9 @@
     "version": "1.0.3",
     "description": "Generates an Angular application with a blogging feature setup and ready to be deployed to firebase.",
     "main": "index.js",
+    "bin": {
+        "ng-blog": "./index.js"
+    },
     "scripts": {
         "patch": "git add -A && git commit -m 'patching update to npm' && git push && npm version patch && npm publish && git push",
         "test": "echo test"
@@ -17,7 +20,7 @@
         "Firebase"
     ],
     "author": "Garrett Manley <garrettmanley@gmail.com>",
-    "license": "MIT",
+    "license": "GPL-3.0",
     "bugs": {
         "url": "https://github.com/GarrettManley/ng-blog/issues"
     },

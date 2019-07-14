@@ -9,6 +9,8 @@
     "scripts": {
         "build": "tsc -w --outDir ./out ./lib/index.ts",
         "patch": "npm version patch && npm publish && git push",
+        "minor": "npm version minor && npm publish && git push",
+        "major": "npm version major && npm publish && git push",
         "test": "nodemon ./bin/index.js --watch"
     },
     "repository": {

@@ -7,8 +7,9 @@
         "ng-blog": "./bin/index.js"
     },
     "scripts": {
+        "build": "tsc -w --outDir ./out ./lib/index.ts",
         "patch": "npm version patch && npm publish && git push",
-        "test": "echo test"
+        "test": "nodemon ./bin/index.js --watch"
     },
     "repository": {
         "type": "git",
@@ -26,6 +27,14 @@
     },
     "homepage": "https://github.com/GarrettManley/ng-blog#readme",
     "dependencies": {
+        "colors": "^1.3.3",
         "npm": "^6.10.0"
+    },
+    "devDependencies": {
+        "@types/node": "^12.6.2",
+        "cypress": "^3.4.0",
+        "nodemon": "^1.19.1",
+        "tsc": "^1.20150623.0",
+        "typescript": "^3.5.3"
     }
 }

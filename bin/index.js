@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-const run = require('../out/run');
+const run = require('../out');
 
-run();
+run.test();

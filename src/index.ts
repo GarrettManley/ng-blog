@@ -1,5 +1,5 @@
 import * as c from 'colors';
-import { Shell } from './shell';
+import { ShellHelper } from './helpers/shell';
 
 export function test() {
     console.log(c.green('Running Test...\n'));
@@ -19,6 +19,6 @@ export function test() {
 }
 
 export function shell(cmd: string) {
-    const shell = new Shell();
+    const shell = new ShellHelper();
     shell.run(cmd);
 }

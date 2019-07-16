@@ -1,5 +1,5 @@
-import { NgHelper } from '../../helpers/ng';
-import { ShellHelper } from '../../helpers/shell';
+import { NgHelper } from './ng';
+import { ShellHelper } from './shell';
 
 const ngHelper = new NgHelper();
 

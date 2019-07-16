@@ -1,4 +1,4 @@
-import { ShellHelper } from '../../helpers/shell';
+import { ShellHelper } from './shell';
 import { assert } from 'chai';
 
 describe('Shell Helper Tests', () => {

@@ -10,9 +10,9 @@
         "patch": "npm version patch && npm publish && git push",
         "minor": "npm version minor && npm publish && git push",
         "major": "npm version major && npm publish && git push",
-        "build": "rm -rf ./out && tsc -w",
+        "build": "rm -rf out && tsc -w",
         "test": "mocha -r ts-node/register src/**/*.spec.ts",
-        "doc": "rm -rf ./docs && typedoc ./src"
+        "doc": "rm -rf docs && typedoc src"
     },
     "repository": {
         "type": "git",

@@ -15,11 +15,23 @@ export class ShellHelper {
     }
 
     /**
+     * Creates a directory in the file system
+     * @param dirPath The path of the directory to be created
+     */
+    public mkDir(dirPath: string) {
+        // It appears that this command will work on most platforms
+        // TODO:: Test Windows
+        const cmd: string = `mkdir ${dirPath}`;
+        this.run(cmd);
+    }
+
+    /**
      * ## Remove Directory
      * Removes a directory from a file system.
      * @param dirPath The path of the directory you want to remove
      */
     public rmDir(dirPath: string) {
+        // TODO:: Test Windows
         const cmdWindows: string = `rmdir /s ${dirPath}`;
         const cmdUnix: string = `rm -rf ${dirPath}`;
 

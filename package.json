@@ -30,12 +30,14 @@
     },
     "homepage": "https://github.com/GarrettManley/ng-blog#readme",
     "dependencies": {
-        "@angular/cli": "^8.1.1"
+        "@angular/cli": "^8.1.1",
+        "uuid": "^3.3.2"
     },
     "devDependencies": {
         "@types/chai": "^4.1.7",
         "@types/mocha": "^5.2.7",
         "@types/node": "^12.6.2",
+        "@types/uuid": "^3.4.5",
         "chai": "^4.2.0",
         "mocha": "^6.1.4",
         "nodemon": "^1.19.1",

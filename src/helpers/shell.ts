@@ -15,6 +15,7 @@ export class ShellHelper {
     }
 
     /**
+     * ## Make Directory
      * Creates a directory in the file system
      * @param dirPath The path of the directory to be created
      */

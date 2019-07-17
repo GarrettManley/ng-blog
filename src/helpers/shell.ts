@@ -1,4 +1,5 @@
 import { execSync } from 'child_process';
+import { mkdirSync, existsSync, rmdirSync } from 'fs';
 
 export class ShellHelper {
     platform: NodeJS.Platform = process.platform;
@@ -22,8 +23,11 @@ export class ShellHelper {
     public mkDir(dirPath: string) {
         // It appears that this command will work on most platforms
         // TODO:: Test Windows
-        const cmd: string = `mkdir ${dirPath}`;
-        this.run(cmd);
+        // const cmd: string = `mkdir ${dirPath}`;
+        // this.run(cmd);
+        if (!existsSync(dirPath)) {
+            mkdirSync(dirPath);
+        }
     }
 
     /**
@@ -32,11 +36,9 @@ export class ShellHelper {
      * @param dirPath The path of the directory you want to remove
      */
     public rmDir(dirPath: string) {
-        // TODO:: Test Windows
-        const cmdWindows: string = `rmdir /s ${dirPath}`;
-        const cmdUnix: string = `rm -rf ${dirPath}`;
-
-        this.runXP(cmdWindows, cmdUnix);
+        if (existsSync(dirPath)) {
+            rmdirSync(dirPath);
+        }
     }
 
     /**

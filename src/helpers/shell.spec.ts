@@ -4,7 +4,7 @@ import { existsSync } from 'fs';
 import { TestHelpers } from './test';
 
 describe('Shell Helper Tests', () => {
-    describe('#run()', () => {
+    describe('run()', () => {
         it('should return the output of the command', () => {
             // arrange
             const shellHelper = new ShellHelper();
@@ -34,7 +34,7 @@ describe('Shell Helper Tests', () => {
         });
     });
 
-    describe('#rmDir()', () => {
+    describe('rmDir()', () => {
         it('should remove the specified directory', () => {
             // arrange
             const shellHelper = new ShellHelper();
@@ -46,6 +46,18 @@ describe('Shell Helper Tests', () => {
 
             // assert
             assert.isNotTrue(existsSync(dir));
+        });
+
+        it('should not fail when the dir does not exist', () => {
+            // arrange
+            const shellHelper = new ShellHelper();
+            const dir = TestHelpers.dirRand();
+
+            // act
+            shellHelper.rmDir(dir);
+
+            // assert
+            // test should pass if not errors are thrown
         });
     });
 });

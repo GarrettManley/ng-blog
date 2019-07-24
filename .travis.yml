@@ -1,9 +1,14 @@
 language: node_js
 node_js: node
-
 branches:
     only:
         - master
         - develop
-
-addons:
+deploy:
+    provider: npm
+    email: garrettmanley@gmail.com
+    api_key:
+        secure: dDTNRvVsHzMRUvc4XhXfpbUiLsBnqeHNfBygg/ADrHC7dx/nitGPGqNL3hckZs69bgkRarQX+kiBVCd5AVJkQydzdgQZ5MwmVlofa3ytdNUUgDBjabQ1hCpi3TdAJkX/S6oLenlihzMafONPSolF4qqcEtT7ejrOsUUCHUpN4/SqNPJ7a+dIrDfeiFQzP0Q15YpJexf/OfvL27XUBpFATT0ZkA5EX8x/3N5LV35dypMwKjDRMVNrrQQl1Cd9maB8p8X3q34YrnVgRd5haX6hIEMRhZMoqA/meBSC+DnN3iygpEezd2FqvgapALIVa6SH2gEbhX9OHlls+EloO2XDlH697zc/34W0m6V3HJpWbpKEUDBiCW9k682++LnL5n9/MgH0kNpjPCxvpKuCbZmmwg9O6e5klVcYaH9Wcqwflis0HlZI7y88oqdq6/WcqOJzFXfG/WN52h4kPVvJPzabM9SlpZ9UBkqJYHNxCLEcbiDPLuZnzK2Fyj9rYGG33ysyp6z5z4Qb65Rgp3Vu76JXXqoyu4wHwinq8/YUSzfI+MPj15XHCbzyM7ypGNuwQjGSUUomkbP2+OWWdiWVWhoOvPIqEOAO7r8ZouQwNhRL33aTbWlUoQN6CS7ulgyQHd3i3S8pUmlqAd5X40c1J9joYAr8BBFvUQQcmfHjBSjOsHc=
+    on:
+        tags: true
+        repo: GarrettManley/ng-blog

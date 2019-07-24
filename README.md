@@ -6,6 +6,16 @@ This tool will be setup for use with firebase, how ever, all database transactio
 
 ## Getting Started
 
+## CI/CD
+
+### Master
+
+[![Build Status](https://travis-ci.com/GarrettManley/ng-blog.svg?branch=master)](https://travis-ci.com/GarrettManley/ng-blog)
+
+### Develop
+
+[![Build Status](https://travis-ci.com/GarrettManley/ng-blog.svg?branch=develop)](https://travis-ci.com/GarrettManley/ng-blog)
+
 ## Release History
 
 Latest Version: In Development

@@ -1,5 +1,5 @@
 language: node_js
-os: osx
+node_js: node
 
 branches:
     only:
@@ -7,7 +7,3 @@ branches:
         - develop
 
 addons:
-    homebrew:
-        packages:
-            - node
-        update: true

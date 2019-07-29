@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavLink } from 'projects/ng-blog/src/lib/nav-bar/nav-link';
 
 @Component({
   selector: 'blog-sample-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sample-app';
+  navLinks: NavLink[] = [{ title: 'link', link: '#' }, { title: 'link', link: '#' }, { title: 'link', link: '#' }];
 }

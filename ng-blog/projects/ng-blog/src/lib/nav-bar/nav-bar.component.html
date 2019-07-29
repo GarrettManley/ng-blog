@@ -1,4 +1,9 @@
 <nav>
 
-  <div class="brand">{{title}}</div>
+  <div class="nav-brand">{{title}}</div>
+
+  <div class="nav-links">
+
+    <div *ngFor="let link of navLinks">{{link.title}}</div>
+  </div>
 </nav>

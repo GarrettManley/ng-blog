@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { NavLink } from './nav-link';
 
 @Component({
   selector: 'ng-blog-nav-bar',
@@ -8,6 +9,9 @@ import { Component, OnInit, Input } from '@angular/core';
 export class NavBarComponent implements OnInit {
   @Input()
   title = 'ng-blog';
+
+  @Input()
+  navLinks: NavLink[];
 
   constructor() {}
 

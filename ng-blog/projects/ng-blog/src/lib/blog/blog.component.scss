@@ -1,18 +1,21 @@
 @import '../../styles/variables';
 
-.title {
-  padding-bottom: 0.25rem;
-  margin-bottom: 1rem;
-  border-bottom: 0.25rem dotted $color-dark;
-}
+.card {
+  .title {
+    padding-bottom: 0.25rem;
+    margin-bottom: 1rem;
+    border-bottom: 0.25rem dotted $color-dark;
+    align-self: flex-start;
+  }
 
-.author {
-  margin-bottom: 0.5rem;
-}
+  .author {
+    margin-bottom: 0.5rem;
+  }
 
-.post-date {
-  display: flex;
-  justify-self: flex-end;
-  margin-top: 1rem;
-  font-size: 0.75rem;
+  .post-date {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+    font-size: 0.75rem;
+  }
 }

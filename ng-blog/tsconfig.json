@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ng-blog": [
+        "dist/ng-blog"
+      ],
+      "ng-blog/*": [
+        "dist/ng-blog/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

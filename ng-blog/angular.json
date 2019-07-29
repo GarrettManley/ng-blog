@@ -2,5 +2,37 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "ng-blog": {
+      "projectType": "library",
+      "root": "projects/ng-blog",
+      "sourceRoot": "projects/ng-blog/src",
+      "prefix": "blog-lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ng-blog/tsconfig.lib.json",
+            "project": "projects/ng-blog/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-blog/src/test.ts",
+            "tsConfig": "projects/ng-blog/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-blog/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["projects/ng-blog/tsconfig.lib.json", "projects/ng-blog/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ng-blog"
 }

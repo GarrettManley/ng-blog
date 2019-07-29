@@ -14,9 +14,26 @@ nav {
 
   .nav-links {
     display: flex;
+    justify-content: center;
+    align-items: center;
 
     div {
       margin-left: 1rem;
+
+      a {
+        text-decoration: none;
+        color: $color-light;
+
+        &.active {
+          padding-bottom: 0.125rem;
+          border-bottom: 0.2rem dotted $color-light;
+        }
+
+        &:hover {
+          padding-bottom: 0.125rem;
+          border-bottom: 0.2rem dotted $color-dark;
+        }
+      }
     }
   }
 }

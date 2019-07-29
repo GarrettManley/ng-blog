@@ -8,5 +8,9 @@ import { NavLink } from 'projects/ng-blog/src/lib/nav-bar/nav-link';
 })
 export class AppComponent {
   title = 'sample-app';
-  navLinks: NavLink[] = [{ title: 'link', link: '#' }, { title: 'link', link: '#' }, { title: 'link', link: '#' }];
+  navLinks: NavLink[] = [
+    { title: 'Home', routerLink: '/home' },
+    { title: 'Build Status', link: 'https://travis-ci.com/GarrettManley/ng-blog' },
+    { title: 'link', link: '#' },
+  ];
 }

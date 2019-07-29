@@ -7,7 +7,7 @@
       "projectType": "library",
       "root": "projects/ng-blog",
       "sourceRoot": "projects/ng-blog/src",
-      "prefix": "blog-lib",
+      "prefix": "ng-blog",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",

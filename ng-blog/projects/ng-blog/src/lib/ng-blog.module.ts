@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [NavBarComponent],
   imports: [],
-  exports: [],
+  exports: [NavBarComponent],
 })
 export class NgBlogModule {}

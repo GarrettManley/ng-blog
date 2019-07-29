@@ -1,0 +1,11 @@
+@import '../../styles/variables';
+
+nav {
+  padding: 1rem 10%;
+  background: $color-primary;
+  color: $color-light;
+
+  .brand {
+    font-size: 1.5rem;
+  }
+}

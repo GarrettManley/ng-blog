@@ -1,12 +1,8 @@
 import { NgModule } from '@angular/core';
-import { NgBlogComponent } from './ng-blog.component';
-
-
 
 @NgModule({
-  declarations: [NgBlogComponent],
-  imports: [
-  ],
-  exports: [NgBlogComponent]
+  declarations: [],
+  imports: [],
+  exports: [],
 })
-export class NgBlogModule { }
+export class NgBlogModule {}

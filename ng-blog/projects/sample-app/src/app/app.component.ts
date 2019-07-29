@@ -11,6 +11,6 @@ export class AppComponent {
   navLinks: NavLink[] = [
     { title: 'Home', routerLink: '/home' },
     { title: 'Build Status', link: 'https://travis-ci.com/GarrettManley/ng-blog' },
-    { title: 'link', link: '#' },
+    { title: 'GitHub', link: 'https://github.com/GarrettManley/ng-blog' },
   ];
 }

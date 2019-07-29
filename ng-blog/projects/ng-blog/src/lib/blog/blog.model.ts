@@ -3,4 +3,5 @@ export interface Blog {
   content: string;
   author?: string;
   postDate?: Date;
+  postID?: string;
 }

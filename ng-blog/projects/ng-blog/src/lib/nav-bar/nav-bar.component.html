@@ -1,1 +1,15 @@
-<p>nav-bar works!</p>
+<nav>
+
+  <div class="nav-brand">{{title}}</div>
+
+  <div class="nav-links">
+
+    <div *ngFor="let link of navLinks">
+      <a *ngIf="!link.routerLink"
+         href="{{link.link}}">{{link.title}}</a>
+      <a *ngIf="link.routerLink"
+         [routerLink]="[link.routerLink]"
+         routerLinkActive="active">{{link.title}}</a>
+    </div>
+  </div>
+</nav>

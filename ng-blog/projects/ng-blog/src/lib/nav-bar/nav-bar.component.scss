@@ -1,0 +1,39 @@
+@import '../../styles/variables';
+
+nav {
+  padding: 1rem 10%;
+  background: $color-primary;
+  color: $color-light;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .nav-brand {
+    font-size: 1.5rem;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    div {
+      margin-left: 1rem;
+
+      a {
+        text-decoration: none;
+        color: $color-light;
+
+        &.active {
+          padding-bottom: 0.125rem;
+          border-bottom: 0.2rem dotted $color-light;
+        }
+
+        &:hover {
+          padding-bottom: 0.125rem;
+          border-bottom: 0.2rem dotted $color-dark;
+        }
+      }
+    }
+  }
+}

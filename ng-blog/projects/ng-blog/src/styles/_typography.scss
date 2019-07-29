@@ -1,8 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400|Ubuntu&display=swap');
 
 * {
   font-family: 'Ubuntu',
     sans-serif;
   padding: 0;
   margin: 0;
+  color: $color-dark;
+
+  p {
+    font-family: 'Roboto',
+      sans-serif;
+    font-weight: 300;
+    line-height: 1.25rem;
+    letter-spacing: 0.125ch;
+  }
 }

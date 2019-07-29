@@ -71,13 +71,8 @@
             "polyfills": "projects/sample-app/src/polyfills.ts",
             "tsConfig": "projects/sample-app/tsconfig.app.json",
             "aot": false,
-            "assets": [
-              "projects/sample-app/src/favicon.ico",
-              "projects/sample-app/src/assets"
-            ],
-            "styles": [
-              "projects/sample-app/src/styles.css"
-            ],
+            "assets": ["projects/sample-app/src/favicon.ico", "projects/sample-app/src/assets"],
+            "styles": ["projects/sample-app/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -131,13 +126,8 @@
             "polyfills": "projects/sample-app/src/polyfills.ts",
             "tsConfig": "projects/sample-app/tsconfig.spec.json",
             "karmaConfig": "projects/sample-app/karma.conf.js",
-            "assets": [
-              "projects/sample-app/src/favicon.ico",
-              "projects/sample-app/src/assets"
-            ],
-            "styles": [
-              "projects/sample-app/src/styles.css"
-            ],
+            "assets": ["projects/sample-app/src/favicon.ico", "projects/sample-app/src/assets"],
+            "styles": ["projects/sample-app/src/styles.scss"],
             "scripts": []
           }
         },
@@ -149,9 +139,7 @@
               "projects/sample-app/tsconfig.spec.json",
               "projects/sample-app/e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
@@ -169,5 +157,10 @@
       }
     }
   },
-  "defaultProject": "ng-blog"
+  "defaultProject": "ng-blog",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

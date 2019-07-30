@@ -3,7 +3,7 @@
   <div class="card">
     <h3 class="title">{{ blog.title }}</h3>
     <h4 class="author">{{ blog.author }}</h4>
-    <p>{{ blog.content }}</p>
+    <p [id]="blog.postID">{{ blog.content }}</p>
 
     <div class="post-date"><span>Posted: {{blog.postDate}}</span></div>
   </div>

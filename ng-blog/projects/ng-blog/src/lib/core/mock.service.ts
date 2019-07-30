@@ -14,7 +14,7 @@ export class MockService {
       author: 'Garrett Manley',
       postDate: new Date(Date.now()),
       title: 'How to create an angular library',
-      content: lorem.generateParagraphs(5),
+      content: lorem.generateParagraphs(3),
       postID: uuid(),
     };
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Blog } from './blog.model';
+import { IBlog } from './blog.interface';
 
 @Component({
   selector: 'ng-blog',
@@ -8,7 +8,7 @@ import { Blog } from './blog.model';
 })
 export class BlogComponent implements OnInit {
   @Input()
-  blog: Blog;
+  blog: IBlog;
 
   constructor() {}
 

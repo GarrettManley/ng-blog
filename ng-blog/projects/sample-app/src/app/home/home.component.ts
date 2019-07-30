@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Blog } from 'projects/ng-blog/src/lib/blog/blog.model';
+import { IBlog } from 'projects/ng-blog/src/lib/blog/blog.interface';
 
 @Component({
   selector: 'blog-sample-home',
@@ -7,7 +7,7 @@ import { Blog } from 'projects/ng-blog/src/lib/blog/blog.model';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  blog: Blog;
+  blog: IBlog;
   constructor() {}
 
   ngOnInit() {

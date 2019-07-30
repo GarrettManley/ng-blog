@@ -6,6 +6,9 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0;
+  width: 80%;
 
   .nav-brand {
     font-size: 1.5rem;

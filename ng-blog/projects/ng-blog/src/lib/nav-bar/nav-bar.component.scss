@@ -1,14 +1,14 @@
 @import '../../styles/variables';
 
 nav {
-  padding: 1rem 10%;
+  padding: 1rem $gutter;
   background: $color-primary;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   top: 0;
-  width: 80%;
+  width: 100% - ($gutter * 2);
 
   .nav-brand {
     font-size: 1.5rem;

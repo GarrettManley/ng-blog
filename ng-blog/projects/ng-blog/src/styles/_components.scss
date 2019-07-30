@@ -1,11 +1,11 @@
 .container {
-  margin: 1rem 10%;
+  margin: 1rem $gutter;
 }
 
 .card {
   display: flex;
   flex-direction: column;
   background: $color-white;
-  padding: 1.5rem;
+  padding: 2rem;
   @include roundedCorners;
 }

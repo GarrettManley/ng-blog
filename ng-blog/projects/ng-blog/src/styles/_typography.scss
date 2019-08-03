@@ -3,11 +3,10 @@
 * {
   font-family: 'Ubuntu',
     sans-serif;
-  padding: 0;
-  margin: 0;
   color: $color-dark;
 
-  p {
+  p,
+  li {
     font-family: 'Roboto',
       sans-serif;
     font-size: 1.125rem;

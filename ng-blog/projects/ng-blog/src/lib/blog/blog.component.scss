@@ -3,13 +3,21 @@
 .card {
   .title {
     padding-bottom: 0.25rem;
+    margin-top: 0;
     margin-bottom: 1rem;
     border-bottom: 0.25rem dotted $color-dark;
     align-self: flex-start;
   }
 
   .author {
+    margin-top: 0;
     margin-bottom: 0.5rem;
+  }
+
+  .blog {
+    p {
+      padding-bottom: 1rem !important;
+    }
   }
 
   .post-date {

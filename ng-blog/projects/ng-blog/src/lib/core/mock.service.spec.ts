@@ -1,12 +1,29 @@
-import { TestBed } from '@angular/core/testing';
-
 import { MockService } from './mock.service';
 
 describe('MockService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  const service: MockService = new MockService();
 
   it('should be created', () => {
-    const service: MockService = TestBed.get(MockService);
     expect(service).toBeTruthy();
+  });
+
+  describe(`getMockBlog()`, () => {
+    it('should return an IBlog object', () => {
+      const blog = service.getMockBlog();
+      expect(blog).toBeDefined();
+    });
+  });
+
+  describe('getMarkdownLines()', () => {
+    it('should return a value', () => {
+      const lines = service.getMarkdownLines();
+      expect(lines).toBeDefined();
+    });
+
+    it('should return the number of lines passed in as a number', () => {
+      const numLines = 3;
+      const lines = service.getMarkdownLines(numLines);
+      expect(lines.length).toEqual(numLines);
+    });
   });
 });

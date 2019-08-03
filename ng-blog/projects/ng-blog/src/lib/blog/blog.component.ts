@@ -14,6 +14,11 @@ export class BlogComponent implements AfterViewChecked {
   constructor() {}
 
   ngAfterViewChecked(): void {
-    document.getElementById(this.blog.postID).innerHTML = marked(this.blog.content);
+    const blogContent = document.getElementById(this.blog.postID);
+    let content = '';
+    for (const line of this.blog.content) {
+      content += `\n${line}`;
+    }
+    blogContent.innerHTML = marked(content);
   }
 }

@@ -7,7 +7,7 @@ import { MockService } from './mock.service';
   providedIn: 'root',
 })
 export class BlogService {
-  constructor() {}
+  constructor(private mock: MockService) {}
   blogs: BehaviorSubject<IBlog[]> = new BehaviorSubject<IBlog[]>([]);
 
   /**
@@ -18,7 +18,7 @@ export class BlogService {
 
     // TODO:: Create api to serve this
     for (let i = 0; i < 10; i++) {
-      list.push(MockService.getMockBlog());
+      list.push(this.mock.getMockBlog());
     }
 
     this.blogs.next(list);

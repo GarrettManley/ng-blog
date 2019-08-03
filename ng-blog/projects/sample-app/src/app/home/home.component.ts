@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { IBlog } from 'projects/ng-blog/src/lib/blog/blog.interface';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'blog-sample-home',

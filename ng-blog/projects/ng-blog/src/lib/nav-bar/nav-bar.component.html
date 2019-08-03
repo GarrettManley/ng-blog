@@ -6,7 +6,8 @@
 
     <div *ngFor="let link of navLinks">
       <a *ngIf="!link.routerLink"
-         href="{{link.link}}">{{link.title}}</a>
+         href="{{link.link}}"
+         target="_blank">{{link.title}}</a>
       <a *ngIf="link.routerLink"
          [routerLink]="[link.routerLink]"
          routerLinkActive="active">{{link.title}}</a>

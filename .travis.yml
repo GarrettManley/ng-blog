@@ -4,6 +4,10 @@ branches:
     only:
         - master
         - develop
+
+install:
+    - cd ng-blog && npm install
+
 deploy:
     provider: npm
     email: garrettmanley@gmail.com

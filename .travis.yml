@@ -6,7 +6,7 @@ branches:
         - develop
 
 install:
-    - cd ng-blog && npm install
+    - cd ng-blog && npm install && cd ..
 
 deploy:
     provider: npm

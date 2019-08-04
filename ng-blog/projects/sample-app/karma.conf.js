@@ -26,14 +26,7 @@ module.exports = function(config) {
     logLevel: config.LOG_INFO,
     autoWatch: false,
 
-    browsers: ['Chrome', 'ChromeHeadless', 'ChromeHeadlessNoSandbox'],
-    // you can define custom flags
-    customLaunchers: {
-      ChromeHeadlessNoSandbox: {
-        base: 'ChromeHeadless',
-        flags: ['--no-sandbox'],
-      },
-    },
+    browsers: ['Firefox', 'FirefoxDeveloper', 'FirefoxAurora', 'FirefoxNightly'], // you can define custom flags
 
     singleRun: true,
     restartOnFileChange: false,

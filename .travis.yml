@@ -5,6 +5,9 @@ branches:
         - master
         - develop
 
+addons:
+    chrome: stable
+
 install:
     - npm install
     - cd ng-blog && npm install && cd ..

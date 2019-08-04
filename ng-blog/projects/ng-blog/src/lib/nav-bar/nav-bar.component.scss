@@ -35,6 +35,7 @@ nav {
         &:hover {
           padding-bottom: 0.125rem;
           border-bottom: 0.2rem dotted $color-dark;
+          color: $color-white;
         }
       }
     }

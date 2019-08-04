@@ -19,12 +19,6 @@ export class MockService {
       lines.push(`${lorem.generateParagraphs(1)}\n`);
     }
 
-    lines.push('# Test Blog Post');
-    lines.push('## Testing Line Ordering');
-    lines.push('Notes');
-    lines.push('-\tWOW');
-    lines.push('\t-\tI hope this works!');
-
     return lines;
   }
 
@@ -37,8 +31,8 @@ export class MockService {
     return {
       author: 'Garrett Manley',
       postDate: new Date(Date.now()),
-      title: 'How to create an angular library',
-      content: this.getMarkdownLines(3),
+      title: 'Blog Post Title',
+      content: [],
       postID: uuid(),
     };
   }

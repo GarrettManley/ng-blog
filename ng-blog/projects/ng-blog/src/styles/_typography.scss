@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400|Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400|Roboto+Mono|Ubuntu&display=swap');
 
 * {
   font-family: 'Ubuntu',
@@ -6,6 +6,7 @@
   color: $color-dark;
 
   p,
+  td,
   li {
     font-family: 'Roboto',
       sans-serif;
@@ -13,5 +14,26 @@
     font-weight: 300;
     line-height: 1.5rem;
     letter-spacing: 0.1ch;
+  }
+
+  textarea {
+    font-family: 'Roboto Mono',
+      monospace;
+  }
+
+  code {
+    @extend textarea;
+    background: $color-light;
+    border-radius: 1rem;
+    padding: 0rem 0.5rem;
+  }
+
+  pre {
+    code {
+      @extend code;
+      display: block;
+      padding: 0.5rem 1rem;
+      overflow-x: auto;
+    }
   }
 }

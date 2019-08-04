@@ -26,4 +26,25 @@
     margin-top: 1rem;
     font-size: 0.75rem;
   }
+
+  .edit-blog {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+
+    textarea {
+      resize: vertical;
+      padding: 0rem 1rem;
+      height: 10rem;
+      border: none;
+      background: $color-light;
+      color: $color-dark;
+      border-radius: 1rem 1rem 0rem 1rem;
+    }
+
+    .button {
+      margin-top: 1rem;
+      align-self: flex-end;
+    }
+  }
 }

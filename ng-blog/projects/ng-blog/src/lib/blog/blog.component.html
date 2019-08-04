@@ -4,6 +4,13 @@
     <h3 class="title">{{ blog.title }}</h3>
     <h4 class="author">{{ blog.author }}</h4>
 
+    <div class="edit-blog">
+      <textarea [formControl]="editor"></textarea>
+
+      <div class="button"
+           (click)="clickSaveChanges()">Save Changes</div>
+    </div>
+
     <div class="blog"
          [id]="blog.postID"></div>
 

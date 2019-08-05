@@ -1,15 +1,28 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400|Roboto+Mono|Ubuntu&display=swap');
 
-* {
+@mixin ubuntu {
   font-family: 'Ubuntu',
     sans-serif;
+}
+
+@mixin roboto($mono: false) {
+  font-family: 'Roboto',
+    sans-serif;
+
+  @if $mono {
+    font-family: 'Roboto Mono',
+      monospace;
+  }
+}
+
+* {
+  @include ubuntu();
   color: $color-dark;
 
   p,
   td,
   li {
-    font-family: 'Roboto',
-      sans-serif;
+    @include roboto();
     font-size: 1.125rem;
     font-weight: 300;
     line-height: 1.5rem;
@@ -17,8 +30,7 @@
   }
 
   textarea {
-    font-family: 'Roboto Mono',
-      monospace;
+    @include roboto(true);
   }
 
   code {

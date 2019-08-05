@@ -38,6 +38,12 @@ nav {
           color: $color-white;
         }
       }
+
+      .blog-links {
+        span {
+          @extend a;
+        }
+      }
     }
   }
 }

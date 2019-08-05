@@ -8,18 +8,30 @@ export class HttpClientService {
   constructor(private httpClient: HttpClient) {}
 
   public async putAsync(url: string, content: any) {
-    this.httpClient.put(url, content).subscribe(resp => {
-      return resp;
-    });
+    return this.httpClient
+      .put(url, content)
+      .toPromise()
+      .then(resp => {
+        return resp;
+      })
+      .catch(err => {
+        throw err;
+      });
   }
 
   public async postAsync(url: string, content: any) {
-    this.httpClient.post(url, content).subscribe(resp => {
-      return resp;
-    });
+    return this.httpClient
+      .post(url, content)
+      .toPromise()
+      .then(resp => {
+        return resp;
+      })
+      .catch(err => {
+        throw err;
+      });
   }
 
-  public async getAsync(url: string) {
+  public async getAsync(url: string): Promise<any> {
     const requestUrl = url;
     const request: HttpRequest<any> = new HttpRequest('GET', requestUrl);
     return await this.httpClient
@@ -28,8 +40,8 @@ export class HttpClientService {
       .then(resp => {
         return resp;
       })
-      .catch((error: Error) => {
-        return null;
+      .catch(error => {
+        throw error;
       });
   }
 }

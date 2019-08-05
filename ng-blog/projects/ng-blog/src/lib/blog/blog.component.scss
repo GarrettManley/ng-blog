@@ -1,6 +1,20 @@
 @import '../../styles/variables';
+@import '../../../../../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 
 .card {
+
+  .edit {
+    align-self: flex-end;
+    color: $color-dark;
+
+    font-size: 0.75rem;
+
+    &:hover {
+      cursor: pointer;
+      color: $color-primary;
+    }
+  }
+
   .title {
     padding-bottom: 0.25rem;
     margin-top: 0;

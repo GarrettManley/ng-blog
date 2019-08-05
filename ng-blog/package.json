@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve sample-app -o & ng build",
+    "start": "ng serve sample-app -o",
     "build": "ng build --watch",
     "single-test": "ng test --code-coverage --watch=false --project=ng-blog --browsers=ChromeHeadlessNoSandbox",
     "test": "ng test --code-coverage",
@@ -33,6 +33,7 @@
     "@angular/cli": "~8.2.0",
     "@angular/compiler-cli": "~9.0.0-next.0",
     "@angular/language-service": "~9.0.0-next.0",
+    "@fortawesome/fontawesome-free": "^5.10.1",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",

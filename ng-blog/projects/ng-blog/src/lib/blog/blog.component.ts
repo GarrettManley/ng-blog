@@ -2,6 +2,7 @@ import { Component, Input, AfterViewChecked, AfterContentInit, OnInit } from '@a
 import { IBlog } from './blog.interface';
 import * as marked from 'marked';
 import { FormControl } from '@angular/forms';
+import { BlogService } from '../core/blog.service';
 
 @Component({
   selector: 'ng-blog',
@@ -12,13 +13,12 @@ export class BlogComponent implements OnInit, AfterContentInit, AfterViewChecked
   @Input()
   blog: IBlog;
 
+  isEditing = false;
   editor = new FormControl('');
 
-  constructor() {}
+  constructor(private blogService: BlogService) {}
 
   ngOnInit(): void {
-    // Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    // Add 'implements OnInit' to the class.
     this.editor.valueChanges.subscribe(() => {
       this.blog.content = this.editor.value.split(/\n/g);
     });
@@ -49,7 +49,15 @@ export class BlogComponent implements OnInit, AfterContentInit, AfterViewChecked
   }
 
   clickSaveChanges() {
+    this.isEditing = false;
+
     this.blog.content = this.editor.value.split(/\n/g);
     this.blog.postDate = new Date(Date.now());
+
+    this.blogService.updateBlogAsync(this.blog.postID);
+  }
+
+  clickEditBlog() {
+    this.isEditing = true;
   }
 }

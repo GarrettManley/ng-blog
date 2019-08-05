@@ -31,8 +31,7 @@ export class MockService {
     return {
       author: 'Garrett Manley',
       postDate: new Date(Date.now()),
-      title: 'Blog Post Title',
-      content: [],
+      content: ['# Blog Post Title', '', '_by: Garrett Manley_'],
       postID: uuid(),
     };
   }

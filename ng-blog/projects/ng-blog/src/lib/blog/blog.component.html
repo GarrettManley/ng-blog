@@ -1,10 +1,15 @@
 <div class="container">
 
   <div class="card">
-    <h3 class="title">{{ blog.title }}</h3>
-    <h4 class="author">{{ blog.author }}</h4>
+    <i class="far fa-edit edit"
+       *ngIf="!isEditing"
+       (click)="clickEditBlog()"
+       [id]="'edit-' + blog.postID">edit</i>
+    <!-- <h3 class="title">{{ blog.title }}</h3>
+    <h4 class="author">{{ blog.author }}</h4> -->
 
-    <div class="edit-blog">
+    <div class="edit-blog"
+         *ngIf="isEditing">
       <textarea [formControl]="editor"></textarea>
 
       <div class="button"

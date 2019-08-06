@@ -25,7 +25,7 @@ export class BlogService {
       return;
     });
 
-    const array = Object.values<IBlog>(list);
+    const array = Object.values<IBlog>(list).sort(this.compareBlogPostDates);
 
     this.blogs.next(array);
     this.blogsCache = list;
@@ -74,6 +74,18 @@ export class BlogService {
     });
 
     await this.getBlogListAsync();
+  }
+
+  private compareBlogPostDates(a: IBlog, b: IBlog) {
+    if (a.postDate > b.postDate) {
+      return -1;
+    }
+
+    if (a.postDate < b.postDate) {
+      return 1;
+    }
+
+    return 0;
   }
 
   private getBlogAndKey(postID: string): IBlogAndKey {

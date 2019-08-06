@@ -13,7 +13,7 @@ export class BlogComponent implements OnInit, AfterContentInit, AfterViewChecked
   @Input()
   blog: IBlog;
 
-  isEditing = true;
+  isEditing = false;
   editError: string = null;
   editor = new FormControl('');
 

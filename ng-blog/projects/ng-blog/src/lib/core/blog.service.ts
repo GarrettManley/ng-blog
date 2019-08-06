@@ -64,6 +64,8 @@ export class BlogService {
     await this.http.putAsync(this.config.api.updateBlog + blogKeyPair.key + '.json', blogKeyPair.blog).catch(error => {
       throw error;
     });
+
+    await this.getBlogListAsync();
   }
 
   public async deleteBlogAsync(postID: string) {

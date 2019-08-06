@@ -28,13 +28,7 @@ export class BlogComponent implements OnInit, AfterContentInit, AfterViewChecked
   }
 
   ngAfterContentInit(): void {
-    let content = '';
-
-    for (const line of this.blog.content) {
-      if (line !== '\n') {
-        content += `${line}\n`;
-      }
-    }
+    const content = this.blog.content.join('\n');
     this.editor.setValue(content);
   }
 
@@ -44,11 +38,8 @@ export class BlogComponent implements OnInit, AfterContentInit, AfterViewChecked
 
   updateBlogContent(lines: string[]) {
     const blogContent = document.getElementById(this.blog.postID);
-    let content = '';
-
-    for (const line of lines) {
-      content += `${line}\n`;
-    }
+    const content = this.blog.content.join('\n');
+    this.editor.setValue(content);
 
     blogContent.innerHTML = marked(content);
   }

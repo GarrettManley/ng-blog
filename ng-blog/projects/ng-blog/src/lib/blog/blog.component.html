@@ -1,0 +1,30 @@
+<div class="container">
+
+  <div class="card">
+    <i class="far fa-edit edit"
+       *ngIf="!isEditing"
+       (click)="clickEditBlog()">edit</i>
+
+    <div class="edit-blog"
+         *ngIf="isEditing">
+      <textarea [formControl]="editor"></textarea>
+
+      <div class="error"
+           *ngIf="editError">{{editError}}</div>
+
+      <div class="buttons">
+        <i class="far fa-trash-alt trash"
+           (click)="clickDeleteBlog()"><span>delete blog post</span></i>
+
+        <div class="button"
+             (click)="clickSaveChanges()">Save Changes</div>
+      </div>
+    </div>
+
+    <div class="blog"
+         [id]="blog.postID"></div>
+
+    <div class="post-date"><span>Posted: {{blog.postDate}}</span></div>
+    <ng-blog-loader [hidden]="!loading"></ng-blog-loader>
+  </div>
+</div>

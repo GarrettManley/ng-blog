@@ -1,15 +1,19 @@
 @import '../../styles/variables';
 
 nav {
-  padding: 1rem 10%;
+  padding: 1rem $gutter;
   background: $color-primary;
-  color: $color-light;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100% - ($gutter * 2);
+  z-index: 100;
 
   .nav-brand {
     font-size: 1.5rem;
+    color: $color-light;
   }
 
   .nav-links {
@@ -23,6 +27,7 @@ nav {
       a {
         text-decoration: none;
         color: $color-light;
+        cursor: pointer;
 
         &.active {
           padding-bottom: 0.125rem;
@@ -32,8 +37,15 @@ nav {
         &:hover {
           padding-bottom: 0.125rem;
           border-bottom: 0.2rem dotted $color-dark;
+          color: $color-white;
         }
       }
+
+    }
+
+    .blog-links {
+      border-left: 0.2rem dotted $color-light;
+      padding-left: 1rem;
     }
   }
 }

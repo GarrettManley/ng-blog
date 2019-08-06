@@ -4,6 +4,14 @@ branches:
     only:
         - master
         - develop
+
+addons:
+    chrome: stable
+
+install:
+    - npm install
+    - cd ng-blog && npm install && cd ..
+
 deploy:
     provider: npm
     email: garrettmanley@gmail.com

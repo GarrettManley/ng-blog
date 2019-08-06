@@ -14,8 +14,8 @@ export class HttpClientService {
       .then(resp => {
         return resp;
       })
-      .catch(err => {
-        throw err;
+      .catch(error => {
+        throw error;
       });
   }
 

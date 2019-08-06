@@ -11,12 +11,12 @@ describe('BlogService', () => {
   });
 
   describe('getBlogList()', () => {
-    it('should return a list of Blogs', () => {
+    it('should return a list of Blogs', async () => {
       // arrange
       const service: BlogService = TestBed.get(BlogService);
 
       // act
-      const result = service.getBlogList();
+      const result = await service.getBlogListAsync();
 
       // assert
       expect(result).toBeDefined();

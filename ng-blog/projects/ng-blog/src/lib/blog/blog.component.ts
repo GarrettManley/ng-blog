@@ -14,6 +14,7 @@ export class BlogComponent implements OnInit, AfterContentInit, AfterViewChecked
   blog: IBlog;
 
   isEditing = false;
+  editError: string = null;
   editor = new FormControl('');
 
   constructor(private blogService: BlogService) {}
@@ -28,7 +29,9 @@ export class BlogComponent implements OnInit, AfterContentInit, AfterViewChecked
     let content = '';
 
     for (const line of this.blog.content) {
-      content += `${line}\n`;
+      if (line !== '\n') {
+        content += `${line}\n`;
+      }
     }
     this.editor.setValue(content);
   }
@@ -49,12 +52,18 @@ export class BlogComponent implements OnInit, AfterContentInit, AfterViewChecked
   }
 
   clickSaveChanges() {
-    this.isEditing = false;
-
     this.blog.content = this.editor.value.split(/\n/g);
     this.blog.postDate = new Date(Date.now());
 
-    this.blogService.updateBlogAsync(this.blog.postID);
+    this.blogService
+      .updateBlogAsync(this.blog.postID)
+      .then(() => {
+        this.isEditing = false;
+        this.editError = null;
+      })
+      .catch(error => {
+        this.editError = error.message;
+      });
   }
 
   clickEditBlog() {

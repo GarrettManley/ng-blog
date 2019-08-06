@@ -19,41 +19,42 @@ export class BlogService {
   /**
    * Gets the list of all blog posts
    */
-  public async getBlogListAsync() {
-    try {
-      const list = await this.http.getAsync(this.config.api.blogs);
-      const array = Object.values<IBlog>(list);
-
-      this.blogs.next(array);
-      this.blogsCache = list;
-    } catch (error) {
+  public async getBlogListAsync(): Promise<IBlog[]> {
+    const list = await this.http.getAsync(this.config.api.blogs).catch(error => {
       console.log(error);
-    }
+      return;
+    });
+
+    const array = Object.values<IBlog>(list);
+
+    this.blogs.next(array);
+    this.blogsCache = list;
+    return array;
   }
 
   public async createNewBlog() {
+    const tempID = uuid();
+
     const blog: IBlog = {
       author: 'Garrett Manley',
       content: ['# New Blog Post', '', '_by: Garrett Manley_'],
       postDate: new Date(Date.now()),
-      postID: uuid(),
+      postID: tempID,
     };
 
-    this.addBlogAsync(blog).then(resp => {
-      console.log(resp);
-    });
+    const newID = await this.addBlogAsync(blog);
+
+    // await this.updateBlogAsync(tempID, newID);
   }
 
-  public async addBlogAsync(blog: IBlog) {
-    console.log(this.config.api.blogs);
-
-    return this.http.postAsync(this.config.api.blogs, blog).then((resp: any) => {
+  public async addBlogAsync(blog: IBlog): Promise<string> {
+    return await this.http.postAsync(this.config.api.blogs, blog).then((resp: any) => {
       this.getBlogListAsync();
       return resp.name;
     });
   }
 
-  public async updateBlogAsync(postID) {
+  public async updateBlogAsync(postID: string, newID: string = null) {
     const blogs = this.blogsCache;
     const keys = Object.keys(blogs);
     const index = Object.values<IBlog>(blogs).findIndex(blog => blog.postID === postID);
@@ -61,8 +62,12 @@ export class BlogService {
     const key = keys[index];
     const blog = Object.values<IBlog>(blogs)[index];
 
-    blog.postID = key;
+    if (newID !== null) {
+      blog.postID = newID;
+    }
 
-    this.http.putAsync(this.config.api.updateBlog + +'.json', blog);
+    await this.http.putAsync(this.config.api.updateBlog + key + '.json', blog).catch(error => {
+      throw error;
+    });
   }
 }

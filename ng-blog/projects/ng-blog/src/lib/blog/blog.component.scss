@@ -46,6 +46,13 @@
     flex-direction: column;
     margin-top: 1rem;
 
+    .error {
+      color: $color-error;
+      @include roboto(true);
+      margin-top: 0.5rem;
+      font-size: 0.75rem;
+    }
+
     textarea {
       resize: vertical;
       padding: 0rem 1rem;

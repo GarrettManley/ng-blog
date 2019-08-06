@@ -5,12 +5,13 @@
        *ngIf="!isEditing"
        (click)="clickEditBlog()"
        [id]="'edit-' + blog.postID">edit</i>
-    <!-- <h3 class="title">{{ blog.title }}</h3>
-    <h4 class="author">{{ blog.author }}</h4> -->
 
     <div class="edit-blog"
          *ngIf="isEditing">
       <textarea [formControl]="editor"></textarea>
+
+      <div class="error"
+           *ngIf="editError">{{editError}}</div>
 
       <div class="button"
            (click)="clickSaveChanges()">Save Changes</div>

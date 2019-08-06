@@ -31,6 +31,18 @@ export class HttpClientService {
       });
   }
 
+  public async deleteAsync(url: string) {
+    return this.httpClient
+      .delete(url)
+      .toPromise()
+      .then(resp => {
+        return resp;
+      })
+      .catch(err => {
+        throw err;
+      });
+  }
+
   public async getAsync(url: string): Promise<any> {
     const requestUrl = url;
     const request: HttpRequest<any> = new HttpRequest('GET', requestUrl);

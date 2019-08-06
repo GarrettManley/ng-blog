@@ -53,6 +53,8 @@
       font-size: 0.75rem;
     }
 
+
+
     textarea {
       resize: vertical;
       padding: 0rem 1rem;
@@ -63,9 +65,18 @@
       border-radius: 1rem 1rem 0rem 1rem;
     }
 
-    .button {
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       margin-top: 1rem;
-      align-self: flex-end;
+
+      .trash {
+        &:hover {
+          color: $color-error;
+          cursor: pointer;
+        }
+      }
     }
   }
 }

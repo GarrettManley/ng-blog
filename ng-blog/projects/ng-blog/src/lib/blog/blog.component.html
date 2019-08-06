@@ -3,8 +3,7 @@
   <div class="card">
     <i class="far fa-edit edit"
        *ngIf="!isEditing"
-       (click)="clickEditBlog()"
-       [id]="'edit-' + blog.postID">edit</i>
+       (click)="clickEditBlog()">edit</i>
 
     <div class="edit-blog"
          *ngIf="isEditing">
@@ -13,8 +12,13 @@
       <div class="error"
            *ngIf="editError">{{editError}}</div>
 
-      <div class="button"
-           (click)="clickSaveChanges()">Save Changes</div>
+      <div class="buttons">
+        <i class="far fa-trash-alt trash"
+           (click)="clickDeleteBlog()"> delete blog post</i>
+
+        <div class="button"
+             (click)="clickSaveChanges()">Save Changes</div>
+      </div>
     </div>
 
     <div class="blog"

@@ -13,7 +13,7 @@ export class BlogComponent implements OnInit, AfterContentInit, AfterViewChecked
   @Input()
   blog: IBlog;
 
-  isEditing = false;
+  isEditing = true;
   editError: string = null;
   editor = new FormControl('');
 
@@ -68,5 +68,11 @@ export class BlogComponent implements OnInit, AfterContentInit, AfterViewChecked
 
   clickEditBlog() {
     this.isEditing = true;
+  }
+
+  clickDeleteBlog() {
+    this.blogService.deleteBlogAsync(this.blog.postID).catch(error => {
+      this.editError = error.message;
+    });
   }
 }

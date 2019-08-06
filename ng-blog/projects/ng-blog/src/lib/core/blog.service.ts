@@ -55,6 +55,28 @@ export class BlogService {
   }
 
   public async updateBlogAsync(postID: string, newID: string = null) {
+    const blogKeyPair = this.getBlogAndKey(postID);
+
+    if (newID !== null) {
+      blogKeyPair.blog.postID = newID;
+    }
+
+    await this.http.putAsync(this.config.api.updateBlog + blogKeyPair.key + '.json', blogKeyPair.blog).catch(error => {
+      throw error;
+    });
+  }
+
+  public async deleteBlogAsync(postID: string) {
+    const blogKeyPair = this.getBlogAndKey(postID);
+
+    await this.http.deleteAsync(this.config.api.updateBlog + blogKeyPair.key + '.json').catch(error => {
+      throw error;
+    });
+
+    await this.getBlogListAsync();
+  }
+
+  private getBlogAndKey(postID: string): IBlogAndKey {
     const blogs = this.blogsCache;
     const keys = Object.keys(blogs);
     const index = Object.values<IBlog>(blogs).findIndex(blog => blog.postID === postID);
@@ -62,12 +84,14 @@ export class BlogService {
     const key = keys[index];
     const blog = Object.values<IBlog>(blogs)[index];
 
-    if (newID !== null) {
-      blog.postID = newID;
-    }
-
-    await this.http.putAsync(this.config.api.updateBlog + key + '.json', blog).catch(error => {
-      throw error;
-    });
+    return {
+      blog,
+      key,
+    };
   }
+}
+
+export interface IBlogAndKey {
+  blog: IBlog;
+  key: string;
 }

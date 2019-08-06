@@ -9,9 +9,8 @@
     "test": "ng test --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "firebase-setup": "firebase login && firebase init",
-    "firebase-host-local": "firebase serve --only hosting",
-    "firebase-add-project": "firebase use --add"
+    "firebase-host-local": "ng build --project=sample-app && firebase serve --only hosting",
+    "firebase-deploy": "firebase deploy --only hosting:garrett-manley-blog"
   },
   "private": true,
   "dependencies": {

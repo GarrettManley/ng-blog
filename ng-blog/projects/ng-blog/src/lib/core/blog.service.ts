@@ -3,7 +3,7 @@ import { IBlog } from '../blog/blog.interface';
 import { BehaviorSubject } from 'rxjs';
 import { MockService } from './mock.service';
 import { HttpClientService } from './http-client.service';
-import * as uuid from 'uuid/v4';
+import uuid from 'uuid/v4';
 
 @Injectable({
   providedIn: 'root',

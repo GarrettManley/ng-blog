@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LoremIpsum } from 'lorem-ipsum';
-import * as uuid from 'uuid/v4';
+import uuid from 'uuid/v4';
 import { IBlog } from '../blog/blog.interface';
 
 @Injectable({

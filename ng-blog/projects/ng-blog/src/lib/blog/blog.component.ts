@@ -1,6 +1,6 @@
 import { Component, Input, AfterViewChecked, AfterContentInit, OnInit } from '@angular/core';
 import { IBlog } from './blog.interface';
-import * as marked from 'marked';
+import marked from 'marked';
 import { FormControl } from '@angular/forms';
 import { BlogService } from '../core/blog.service';
 

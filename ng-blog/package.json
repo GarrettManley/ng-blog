@@ -9,7 +9,7 @@
     "test": "ng test --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "firebase-host-local": "ng build --project=sample-app && firebase serve --only hosting",
+    "firebase-host-local": "ng build --project=sample-app --prod && firebase serve --only hosting",
     "firebase-deploy": "firebase deploy --only hosting:garrett-manley-blog"
   },
   "private": true,

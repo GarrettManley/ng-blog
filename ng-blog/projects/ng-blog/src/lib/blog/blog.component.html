@@ -25,5 +25,6 @@
          [id]="blog.postID"></div>
 
     <div class="post-date"><span>Posted: {{blog.postDate}}</span></div>
+    <ng-blog-loader [hidden]="!loading"></ng-blog-loader>
   </div>
 </div>

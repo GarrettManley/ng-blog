@@ -17,6 +17,8 @@ export class BlogComponent implements OnInit, AfterContentInit, AfterViewChecked
   editError: string = null;
   editor = new FormControl('');
 
+  loading: boolean;
+
   constructor(private blogService: BlogService) {}
 
   ngOnInit(): void {
@@ -51,28 +53,38 @@ export class BlogComponent implements OnInit, AfterContentInit, AfterViewChecked
     blogContent.innerHTML = marked(content);
   }
 
-  clickSaveChanges() {
-    this.blog.content = this.editor.value.split(/\n/g);
-    this.blog.postDate = new Date(Date.now());
+  async clickSaveChanges() {
+    await this.load(() => {
+      this.blog.content = this.editor.value.split(/\n/g);
+      this.blog.postDate = new Date(Date.now());
 
-    this.blogService
-      .updateBlogAsync(this.blog.postID)
-      .then(() => {
-        this.isEditing = false;
-        this.editError = null;
-      })
-      .catch(error => {
-        this.editError = error.message;
-      });
+      this.blogService
+        .updateBlogAsync(this.blog.postID)
+        .then(() => {
+          this.isEditing = false;
+          this.editError = null;
+        })
+        .catch(error => {
+          this.editError = error.message;
+        });
+    });
   }
 
   clickEditBlog() {
     this.isEditing = true;
   }
 
-  clickDeleteBlog() {
-    this.blogService.deleteBlogAsync(this.blog.postID).catch(error => {
-      this.editError = error.message;
+  async clickDeleteBlog() {
+    await this.load(() => {
+      this.blogService.deleteBlogAsync(this.blog.postID).catch(error => {
+        this.editError = error.message;
+      });
     });
+  }
+
+  async load(callback) {
+    this.loading = true;
+    await callback();
+    this.loading = false;
   }
 }

@@ -1,11 +1,8 @@
 {
   "hosting": {
+    "site": "garrett-manley-blog",
     "public": "dist/sample-app",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
         "source": "**",

@@ -74,9 +74,19 @@
       margin-top: 1rem;
 
       .trash {
+
         &:hover {
           color: $color-error;
           cursor: pointer;
+        }
+
+        span {
+          margin-left: 0.25rem;
+          @include ubuntu;
+
+          &:hover {
+            color: $color-error;
+          }
         }
       }
     }

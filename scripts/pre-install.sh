@@ -12,3 +12,5 @@ eval $(ssh-agent -s)
 ssh-agent $(ssh-add .travis/github_deploy_key)
 
 git remote set-url --push origin git@github.com:GarrettManley/ng-blog.git
+
+git remote -v

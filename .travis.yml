@@ -13,6 +13,7 @@ script:
     - npm run build
 before_deploy:
     - ls -a out
+    - npm run patch
 deploy:
     provider: npm
     email: garrettmanley@gmail.com

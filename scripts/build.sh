@@ -1,7 +1,6 @@
 #!/usr/bin/env sh
 
-rm -rf out
-tsc
+npm run build
 npm version patch
 
 # Push the version patch to the head of develop so that this changes is reflected

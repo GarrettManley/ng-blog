@@ -6,6 +6,8 @@ openssl aes-256-cbc \
 	-in .travis/github_deploy_key.enc \
 	-out .travis/github_deploy_key -d
 
+sudo chmod 600 .travis/github_deploy_key
+
 eval $(ssh-agent -s)
 ssh-agent $(ssh-add .travis/github_deploy_key)
 

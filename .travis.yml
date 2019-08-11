@@ -9,6 +9,8 @@ addons:
 cache:
     directories:
         - 'node_modules'
+before-install:
+    - openssl aes-256-cbc -K $encrypted_356fe8876b45_key -iv $encrypted_356fe8876b45_iv -in github_deploy_key.enc -out github_deploy_key -d
 install:
     - ./scripts/install.sh
 script:
@@ -23,3 +25,6 @@ deploy:
     on:
         repo: GarrettManley/ng-blog
         all_branches: true
+env:
+    global:
+        - secure: 'UoZkDcJlbk0ppViuzS5BfyZW+TaKE4alGMCOQlW1zEEIEWqrTv9PB0v6i3qpYaKxiFqtLK0OOKy0rFlnMAYFPL0ypElOW5+ZJDWaAeIkRdN/ziKmZMne5YR+sQepBUs5U5jQP6RHpiKHTlNYmXNcOCShePXzwyd7ZC0Bh4so5SQvlxQo7Otxb1krsiTFG2SXkZcz+EXueo/IrpMnGiXczhmUo61kPokPT/mwNzl5okuW7CoRMYYJHYTBVBX63HqkAiT/mGppQCU/I/9rk98KfTOy9/SDkptKN2wpmrj5+T+NTCy7G4v3AnbemuVvxPmNyzrHsIjglv7lwPOnVMx8Ag7332JHzsDS1Oz6+0xuR27JL8QJgxU1vWY4py56VnudFZjki7kjxT237vV2f//OfirZJuQ/qkSpRvFFVAxoxxkyOoXEO1kv80q1o8QB1rywICmcvXSGCUNSX1IqSby3WKHVw1ee/nr2kFBjaA1N9hn8cy2PW0Pv7AfL3PnbRi6vmXWCPL08eTTp/ctbUy79YkeonLFBIlpmDpUsGK+fDDR/efCBddakGsEGrZl1PjRCSgj5mz9tXrI6hRy6gstrLGbyq9HF9RuPL2CHKabo935Gr453+QjFoZYmfRcxQQZSDNT+j8u9A0+bKFbufcTpgdn5bpQYHUh6/S9ic52Zh78='

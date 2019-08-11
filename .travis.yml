@@ -9,6 +9,8 @@ addons:
 install:
     - npm install
     - cd ng-blog && npm install && cd ..
+script:
+    - npm run build
 deploy:
     provider: npm
     email: garrettmanley@gmail.com

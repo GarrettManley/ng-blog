@@ -7,13 +7,11 @@ branches:
 addons:
     chrome: stable
 install:
-    - npm install
-    - cd ng-blog && npm install && cd ..
+    - ./scripts/build.sh
 script:
-    - npm run build
+    - ./scripts/build.sh
 before_deploy:
-    - ls -a out
-    - npm run patch
+    - ./scripts/pre-deploy.sh
 deploy:
     provider: npm
     email: garrettmanley@gmail.com

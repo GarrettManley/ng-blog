@@ -7,7 +7,7 @@ branches:
 addons:
     chrome: stable
 install:
-    - ./scripts/build.sh
+    - ./scripts/install.sh
 script:
     - ./scripts/build.sh
 before_deploy:

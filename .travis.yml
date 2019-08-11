@@ -13,7 +13,7 @@ deploy:
     provider: npm
     email: garrettmanley@gmail.com
     api_key:
-        secure: NPM_TOKEN
+        secure: $NPM_TOKEN
     on:
         repo: GarrettManley/ng-blog
         all_branches: true

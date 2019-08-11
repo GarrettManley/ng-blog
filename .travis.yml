@@ -9,6 +9,7 @@ addons:
 cache:
     directories:
         - 'node_modules'
+        - 'ng-blog/node_modules'
 before_install:
     - ./scripts/pre-install.sh
 install:

@@ -11,6 +11,8 @@ install:
     - cd ng-blog && npm install && cd ..
 script:
     - npm run build
+before_deploy:
+    - ls -a out
 deploy:
     provider: npm
     email: garrettmanley@gmail.com

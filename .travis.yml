@@ -6,6 +6,9 @@ branches:
         - develop
 addons:
     chrome: stable
+cache:
+    directories:
+        - 'node_modules'
 install:
     - ./scripts/install.sh
 script:

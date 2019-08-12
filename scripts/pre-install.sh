@@ -17,5 +17,3 @@ git remote set-url --push origin git@github.com:GarrettManley/ng-blog.git
 git remote -v
 
 ssh -vT git@github.com
-
-exit 500

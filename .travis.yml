@@ -18,6 +18,8 @@ before_script:
     - ./scripts/pre-build.sh
 script:
     - ./scripts/build.sh
+after_success:
+    - ./scripts/post-build.sh
 before_deploy:
     - ./scripts/pre-deploy.sh
 deploy:

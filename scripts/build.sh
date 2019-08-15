@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 
+eval $(ssh-agent -s)
 ssh-agent $(ssh-add .travis/github_deploy_key)
 
 npm run build

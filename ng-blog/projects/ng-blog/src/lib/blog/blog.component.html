@@ -1,9 +1,13 @@
 <div class="container">
 
-  <div class="card">
+  <div *ngIf="this.blog.content"
+       class="card">
     <i class="far fa-edit edit"
        *ngIf="!isEditing"
        (click)="clickEditBlog()">edit</i>
+    <i class="far fa-edit edit"
+       *ngIf="!isEditing"
+       [routerLink]="'/blog/' + blog.postID">Go To Post</i>
 
     <div class="edit-blog"
          *ngIf="isEditing">
@@ -25,6 +29,12 @@
          [id]="blog.postID"></div>
 
     <div class="post-date"><span>Posted: {{blog.postDate}}</span></div>
+    <ng-blog-loader [hidden]="!loading"></ng-blog-loader>
+  </div>
+
+  <div *ngIf="!this.blog.content"
+       class="card error"
+       id="errors">
     <ng-blog-loader [hidden]="!loading"></ng-blog-loader>
   </div>
 </div>

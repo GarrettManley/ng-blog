@@ -8,6 +8,14 @@
   background: $color-white;
   padding: 2rem;
   @include roundedCorners;
+
+  &.error {
+    align-items: center;
+
+    * {
+      color: $color-error;
+    }
+  }
 }
 
 .button {

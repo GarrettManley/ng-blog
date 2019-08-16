@@ -7,10 +7,11 @@ import { RouterModule } from '@angular/router';
 import { BlogComponent } from './blog/blog.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { LoaderComponent } from './loader/loader.component';
+import { BlogPostComponent } from './blog-post/blog-post.component';
 
 @NgModule({
-  declarations: [NavBarComponent, BlogComponent, BlogListComponent, LoaderComponent],
+  declarations: [NavBarComponent, BlogComponent, BlogListComponent, LoaderComponent, BlogPostComponent],
   imports: [CommonModule, RouterModule, ReactiveFormsModule, HttpClientModule],
-  exports: [NavBarComponent, BlogComponent, BlogListComponent],
+  exports: [NavBarComponent, BlogComponent, BlogListComponent, BlogPostComponent],
 })
 export class NgBlogModule {}

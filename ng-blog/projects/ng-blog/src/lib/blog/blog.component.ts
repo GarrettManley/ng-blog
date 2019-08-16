@@ -13,11 +13,22 @@ export class BlogComponent implements OnInit, AfterContentInit, AfterViewChecked
   @Input()
   blog: IBlog;
 
+  @Input()
+  loading: boolean;
+
+  // tslint:disable-next-line: variable-name
+  private _errorMessage: string;
+  public get errorMessage(): string {
+    return this._errorMessage;
+  }
+  @Input()
+  public set errorMessage(v: string) {
+    this._errorMessage = marked(v ? v : '');
+  }
+
   isEditing = false;
   editError: string = null;
   editor = new FormControl('');
-
-  loading: boolean;
 
   constructor(private blogService: BlogService) {}
 
@@ -28,12 +39,18 @@ export class BlogComponent implements OnInit, AfterContentInit, AfterViewChecked
   }
 
   ngAfterContentInit(): void {
-    const content = this.blog.content.join('\n');
-    this.editor.setValue(content);
+    if (this.blog.content) {
+      const content = this.blog.content.join('\n');
+      this.editor.setValue(content);
+    }
   }
 
   ngAfterViewChecked(): void {
-    this.updateBlogContent(this.blog.content);
+    if (this.blog.content) {
+      this.updateBlogContent(this.blog.content);
+    } else {
+      document.getElementById('errors').innerHTML = this.errorMessage;
+    }
   }
 
   updateBlogContent(lines: string[]) {

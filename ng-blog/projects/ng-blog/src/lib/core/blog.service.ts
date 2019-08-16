@@ -29,6 +29,9 @@ export class BlogService {
 
     this.blogs.next(array);
     this.blogsCache = list;
+
+    console.log(array);
+
     return array;
   }
 
@@ -76,6 +79,12 @@ export class BlogService {
     });
 
     await this.getBlogListAsync();
+  }
+
+  public async getBlogAsync(postID: string): Promise<IBlog> {
+    return await this.http.getAsync(this.config.api.updateBlog + postID + '.json').catch(error => {
+      throw error;
+    });
   }
 
   private compareBlogPostDates(a: IBlog, b: IBlog) {

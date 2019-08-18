@@ -6,7 +6,7 @@ if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
 	ssh-agent $(ssh-add .travis/github_deploy_key)
 
 	if [ "$TRAVIS_BRANCH" = "master" ]; then
-		npm version minor -m "[skip ci] &s"
+		npm version minor -m "[skip ci] %s"
 	else
 		npm version patch -m "[skip ci] %s"
 	fi

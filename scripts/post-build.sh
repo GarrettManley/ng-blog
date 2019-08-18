@@ -1,4 +1,6 @@
 #!/usr/bin/env sh
+$TRAVIS_PULL_REQUEST=$0
+
 if ["$TRAVIS_PULL_REQUEST" == "false"]; then
 
 	npm version patch -m "[skip ci] %s"

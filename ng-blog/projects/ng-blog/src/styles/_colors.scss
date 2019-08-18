@@ -1,0 +1,19 @@
+// Primary Color
+$color-primary: rgb(45, 194, 189);
+
+$light-adjustment: 80%;
+
+@if lightness($color-primary)>50% {
+  $light-adjustment: 65%;
+}
+
+// light color
+$color-light: scale-color($color-primary, $saturation: -$light-adjustment, $lightness: $light-adjustment);
+// dark color
+$dark-adjustment: $light-adjustment;
+$color-dark: scale-color($color-primary, $saturation: $dark-adjustment, $lightness: -$dark-adjustment);
+$color-dark-trans: rgba($color-dark, 50%);
+// error color
+$color-error: complement($color-primary);
+// white color
+$color-white: scale-color($color-primary, $lightness: 99%);

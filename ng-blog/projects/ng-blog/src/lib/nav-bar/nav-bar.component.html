@@ -1,0 +1,20 @@
+<nav>
+
+  <div class="nav-brand">{{title}}</div>
+
+  <div class="nav-links">
+
+    <div *ngFor="let link of navLinks">
+      <a *ngIf="!link.routerLink"
+         href="{{link.link}}"
+         target="_blank">{{link.title}}</a>
+      <a *ngIf="link.routerLink"
+         [routerLink]="[link.routerLink]"
+         routerLinkActive="active">{{link.title}}</a>
+    </div>
+
+    <div class="blog-links">
+      <a (click)="clickNewBlog()">Create Blog</a>
+    </div>
+  </div>
+</nav>

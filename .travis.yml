@@ -4,11 +4,32 @@ branches:
     only:
         - master
         - develop
+addons:
+    chrome: stable
+cache:
+    directories:
+        - 'node_modules'
+        - 'ng-blog/node_modules'
+before_install:
+    - ./scripts/pre-install.sh
+install:
+    - ./scripts/install.sh
+before_script:
+    - ./scripts/pre-build.sh
+script:
+    - ./scripts/build.sh
+after_success:
+    - ./scripts/post-build.sh $TRAVIS_PULL_REQUEST
+before_deploy:
+    - ./scripts/pre-deploy.sh
 deploy:
     provider: npm
     email: garrettmanley@gmail.com
     api_key:
-        secure: dDTNRvVsHzMRUvc4XhXfpbUiLsBnqeHNfBygg/ADrHC7dx/nitGPGqNL3hckZs69bgkRarQX+kiBVCd5AVJkQydzdgQZ5MwmVlofa3ytdNUUgDBjabQ1hCpi3TdAJkX/S6oLenlihzMafONPSolF4qqcEtT7ejrOsUUCHUpN4/SqNPJ7a+dIrDfeiFQzP0Q15YpJexf/OfvL27XUBpFATT0ZkA5EX8x/3N5LV35dypMwKjDRMVNrrQQl1Cd9maB8p8X3q34YrnVgRd5haX6hIEMRhZMoqA/meBSC+DnN3iygpEezd2FqvgapALIVa6SH2gEbhX9OHlls+EloO2XDlH697zc/34W0m6V3HJpWbpKEUDBiCW9k682++LnL5n9/MgH0kNpjPCxvpKuCbZmmwg9O6e5klVcYaH9Wcqwflis0HlZI7y88oqdq6/WcqOJzFXfG/WN52h4kPVvJPzabM9SlpZ9UBkqJYHNxCLEcbiDPLuZnzK2Fyj9rYGG33ysyp6z5z4Qb65Rgp3Vu76JXXqoyu4wHwinq8/YUSzfI+MPj15XHCbzyM7ypGNuwQjGSUUomkbP2+OWWdiWVWhoOvPIqEOAO7r8ZouQwNhRL33aTbWlUoQN6CS7ulgyQHd3i3S8pUmlqAd5X40c1J9joYAr8BBFvUQQcmfHjBSjOsHc=
+        secure: $NPM_TOKEN
     on:
         repo: GarrettManley/ng-blog
         branch: master
+env:
+    global:
+        - secure: 'UoZkDcJlbk0ppViuzS5BfyZW+TaKE4alGMCOQlW1zEEIEWqrTv9PB0v6i3qpYaKxiFqtLK0OOKy0rFlnMAYFPL0ypElOW5+ZJDWaAeIkRdN/ziKmZMne5YR+sQepBUs5U5jQP6RHpiKHTlNYmXNcOCShePXzwyd7ZC0Bh4so5SQvlxQo7Otxb1krsiTFG2SXkZcz+EXueo/IrpMnGiXczhmUo61kPokPT/mwNzl5okuW7CoRMYYJHYTBVBX63HqkAiT/mGppQCU/I/9rk98KfTOy9/SDkptKN2wpmrj5+T+NTCy7G4v3AnbemuVvxPmNyzrHsIjglv7lwPOnVMx8Ag7332JHzsDS1Oz6+0xuR27JL8QJgxU1vWY4py56VnudFZjki7kjxT237vV2f//OfirZJuQ/qkSpRvFFVAxoxxkyOoXEO1kv80q1o8QB1rywICmcvXSGCUNSX1IqSby3WKHVw1ee/nr2kFBjaA1N9hn8cy2PW0Pv7AfL3PnbRi6vmXWCPL08eTTp/ctbUy79YkeonLFBIlpmDpUsGK+fDDR/efCBddakGsEGrZl1PjRCSgj5mz9tXrI6hRy6gstrLGbyq9HF9RuPL2CHKabo935Gr453+QjFoZYmfRcxQQZSDNT+j8u9A0+bKFbufcTpgdn5bpQYHUh6/S9ic52Zh78='

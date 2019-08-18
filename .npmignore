@@ -1,1 +1,7 @@
-!dist/*
+.travis/
+bin/
+docs/
+ng-blog/
+scripts/
+src/
+tsconfig.json

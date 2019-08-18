@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve sample-app -o",
     "build": "ng build --watch",
+    "build:prod": "ng build --project=ng-blog",
     "single-test": "ng test --code-coverage --watch=false --project=ng-blog --browsers=ChromeHeadlessNoSandbox",
     "test": "ng test --code-coverage",
     "lint": "ng lint",

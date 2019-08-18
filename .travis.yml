@@ -19,7 +19,7 @@ before_script:
 script:
     - ./scripts/build.sh
 after_success:
-    - 'if [["$TRAVIS_PULL_REQUEST" == "false"]]; then ./scripts/post-build.sh fi;'
+    - ./scripts/post-build.sh
 before_deploy:
     - ./scripts/pre-deploy.sh
 deploy:

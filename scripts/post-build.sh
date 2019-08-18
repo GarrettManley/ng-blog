@@ -2,7 +2,7 @@
 
 if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
 	npm version patch -m "[skip ci] %s"
-	# add gitup deploy key to the SSH agent
+	# add github deploy key to the SSH agent
 	eval $(ssh-agent -s)
 	ssh-agent $(ssh-add .travis/github_deploy_key)
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
-$TRAVIS_PULL_REQUEST=$0
+TRAVIS_PULL_REQUEST=$0
 
-if ["$TRAVIS_PULL_REQUEST" == "false"]; then
+if ["${TRAVIS_PULL_REQUEST}" == "false"]; then
 
 	npm version patch -m "[skip ci] %s"
 	# add gitup deploy key to the SSH agent

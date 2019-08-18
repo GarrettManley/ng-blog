@@ -19,7 +19,7 @@ before_script:
 script:
     - ./scripts/build.sh
 after_success:
-    - ./scripts/post-build.sh
+    - ./scripts/post-build.sh $TRAVIS_PULL_REQUEST
 before_deploy:
     - ./scripts/pre-deploy.sh
 deploy:

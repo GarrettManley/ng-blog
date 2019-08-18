@@ -2,10 +2,7 @@
 	"name": "ng-blog",
 	"version": "1.5.0",
 	"description": "Generates an Angular application with a blogging feature setup and ready to be deployed to firebase.",
-	"main": "./bin/index.js",
-	"bin": {
-		"ng-blog": "./bin/index.js"
-	},
+	"main": "./dist",
 	"scripts": {
 		"patch": "npm version patch && git push",
 		"minor": "npm version minor && git push",

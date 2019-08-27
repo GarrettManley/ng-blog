@@ -1,0 +1,34 @@
+* {
+    @include ubuntu();
+    color: $color-dark;
+  
+    p,
+    td,
+    li {
+      @include roboto();
+      font-size: 1.125rem;
+      font-weight: 300;
+      line-height: 1.5rem;
+      letter-spacing: 0.1ch;
+    }
+  
+    textarea {
+      @include roboto(true);
+    }
+  
+    code {
+      @extend textarea;
+      background: $color-light;
+      border-radius: 1rem;
+      padding: 0rem 0.5rem;
+    }
+  
+    pre {
+      code {
+        @extend code;
+        display: block;
+        padding: 0.5rem 1rem;
+        overflow-x: auto;
+      }
+    }
+  }

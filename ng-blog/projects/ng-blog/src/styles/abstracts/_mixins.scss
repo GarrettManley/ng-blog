@@ -1,0 +1,18 @@
+@mixin roundedCorners {
+  border-radius: 1rem;
+}
+
+@mixin ubuntu {
+  font-family: 'Ubuntu',
+    sans-serif;
+}
+
+@mixin roboto($mono: false) {
+  font-family: 'Roboto',
+    sans-serif;
+
+  @if $mono {
+    font-family: 'Roboto Mono',
+      monospace;
+  }
+}

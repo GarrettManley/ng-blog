@@ -1,5 +1,2 @@
-@import 'colors';
-@import 'dimens';
-@import 'typography';
-@import 'mixins';
-@import 'components';
+// legacy to not break imports
+@import './abstracts/abstracts'

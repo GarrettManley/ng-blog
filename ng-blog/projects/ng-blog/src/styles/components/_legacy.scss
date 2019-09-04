@@ -1,0 +1,28 @@
+.container {
+    margin: 1rem $gutter;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    background: $color-white;
+    padding: 2rem;
+    @include roundedCorners;
+  
+    &.error {
+      align-items: center;
+  
+      * {
+        color: $color-error;
+      }
+    }
+  }
+  
+  .button {
+    @extend .card;
+    padding: 0.5rem;
+    background: $color-primary;
+    cursor: pointer;
+    color: $color-white;
+  }
+  

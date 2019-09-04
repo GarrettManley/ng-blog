@@ -1,3 +1,21 @@
+@charset 'utf-8';
+
+//Vendor
+@import '../../ng-blog/src/styles/vendor/vendor';
+
+//Abstracts
+@import '../../ng-blog/src/styles/abstracts/abstracts';
+
+//Base Styles
+@import '../../ng-blog/src/styles/base/base';
+
+//Components
+@import '../../ng-blog/src/styles/components/components';
+
+//Layout
+@import '../../ng-blog/src/styles/layouts/layouts';
+
+//Legacy
 @import '../../ng-blog/src/styles/variables';
 
 /* You can add global styles to this file, and also import other style files */
@@ -6,3 +24,4 @@ body {
   background: $color-light;
   padding-top: 3.5rem;
 }
+//Legacy

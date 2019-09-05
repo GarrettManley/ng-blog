@@ -4,4 +4,5 @@ docs/
 ng-blog/
 scripts/
 src/
+.travis.yml
 tsconfig.json

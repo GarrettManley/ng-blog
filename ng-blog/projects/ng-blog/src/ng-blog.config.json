@@ -3,5 +3,8 @@
     "url": "https://garrettmanley-website.firebaseio.com/",
     "blogs": "https://garrettmanley-website.firebaseio.com/blogs.json",
     "updateBlog": "https://garrettmanley-website.firebaseio.com/blogs/"
+  },
+  "authors": {
+    "default": "Garrett Manley"
   }
 }

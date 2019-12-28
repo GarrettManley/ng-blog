@@ -3,22 +3,22 @@ import { NavLink } from './nav-link';
 import { BlogService } from '../core/blog.service';
 
 @Component({
-  selector: 'ng-blog-nav-bar',
-  templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.scss'],
+	selector: 'ng-blog-nav-bar',
+	templateUrl: './nav-bar.component.html',
+	styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent implements OnInit {
-  @Input()
-  title = 'ng-blog';
+	@Input()
+	title = 'ng-blog';
 
-  @Input()
-  navLinks: NavLink[];
+	@Input()
+	navLinks: NavLink[];
 
-  constructor(private blogService: BlogService) {}
+	constructor(private blogService: BlogService) {}
 
-  ngOnInit() {}
+	ngOnInit() {}
 
-  async clickNewBlog() {
-    this.blogService.createNewBlog();
-  }
+	async clickNewBlog() {
+		this.blogService.createNewBlog();
+	}
 }

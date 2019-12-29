@@ -3,6 +3,7 @@ import { IBlog } from './blog.interface';
 import marked from 'marked';
 import { FormControl } from '@angular/forms';
 import { BlogService } from '../core/blog.service';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'ng-blog',
@@ -29,7 +30,7 @@ export class BlogComponent implements OnInit, AfterContentInit, AfterViewChecked
 	editError: string = null;
 	editor = new FormControl('');
 
-	constructor(private blogService: BlogService) {}
+	constructor(private blogService: BlogService, private router: Router) {}
 
 	ngOnInit(): void {
 		this.editor.valueChanges.subscribe(() => {
@@ -46,13 +47,13 @@ export class BlogComponent implements OnInit, AfterContentInit, AfterViewChecked
 
 	ngAfterViewChecked(): void {
 		if (this.blog.content) {
-			this.updateBlogContent(this.blog.content);
+			this.updateBlogContent();
 		} else {
 			document.getElementById('errors').innerHTML = this.errorMessage;
 		}
 	}
 
-	updateBlogContent(lines: string[]) {
+	updateBlogContent() {
 		const blogContent = document.getElementById(this.blog.postID);
 		const content = this.blog.content.join('\n');
 		this.editor.setValue(content);
@@ -83,9 +84,14 @@ export class BlogComponent implements OnInit, AfterContentInit, AfterViewChecked
 
 	async clickDeleteBlog() {
 		await this.load(async () => {
-			await this.blogService.deleteBlogAsync(this.blog.postID).catch(error => {
-				this.editError = error.message;
-			});
+			await this.blogService
+				.deleteBlogAsync(this.blog.postID)
+				.then(() => {
+					this.router.navigate(['/home']);
+				})
+				.catch(error => {
+					this.editError = error.message;
+				});
 		});
 	}
 

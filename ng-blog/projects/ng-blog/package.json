@@ -4,5 +4,8 @@
   "peerDependencies": {
     "@angular/common": "^8.1.2",
     "@angular/core": "^8.1.2"
+  },
+  "devDependencies": {
+    "@types/marked": "^0.7.2"
   }
 }

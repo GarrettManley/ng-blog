@@ -1,6 +1,6 @@
 {
 	"name": "ng-blog",
-	"version": "1.8.2",
+	"version": "1.8.3",
 	"description": "Generates an Angular application with a blogging feature setup and ready to be deployed to firebase.",
 	"main": "./dist",
 	"scripts": {

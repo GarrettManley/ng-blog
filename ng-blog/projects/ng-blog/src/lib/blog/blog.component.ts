@@ -62,11 +62,11 @@ export class BlogComponent implements OnInit, AfterContentInit, AfterViewChecked
 	}
 
 	async clickSaveChanges() {
-		await this.load(() => {
+		await this.load(async () => {
 			this.blog.content = this.editor.value.split(/\n/g);
 			this.blog.postDate = new Date(Date.now());
 
-			this.blogService
+			await this.blogService
 				.updateBlogAsync(this.blog.postID)
 				.then(() => {
 					this.isEditing = false;

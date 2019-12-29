@@ -11,7 +11,9 @@
 		"build-dev": "npm i && rm -rf dist && tsc -w",
 		"test": "mocha -r ts-node/register src/**/*.spec.ts && cd ng-blog && npm run single-test",
 		"doc": "rm -rf docs && typedoc src",
-		"update-docs": "npm run doc && git add -A && git commit -m 'Updated Docs' && npm run patch"
+		"update-docs": "npm run doc && git add -A && git commit -m 'Updated Docs' && npm run patch",
+		"lint": "prettier --config .prettierrc --ignore-path .prettierignore --debug-check '**/src/**/*'",
+		"clean": "prettier --config .prettierrc --ignore-path .prettierignore --write '**/src/**/*'"
 	},
 	"repository": {
 		"type": "git",
@@ -30,6 +32,7 @@
 	"homepage": "https://github.com/GarrettManley/ng-blog#readme",
 	"dependencies": {
 		"@angular/cli": "^8.1.1",
+		"prettier": "^1.19.1",
 		"uuid": "^3.3.2"
 	},
 	"devDependencies": {

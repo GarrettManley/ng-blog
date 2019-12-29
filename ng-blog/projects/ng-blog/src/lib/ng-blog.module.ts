@@ -10,8 +10,8 @@ import { LoaderComponent } from './loader/loader.component';
 import { BlogPostComponent } from './blog-post/blog-post.component';
 
 @NgModule({
-  declarations: [NavBarComponent, BlogComponent, BlogListComponent, LoaderComponent, BlogPostComponent],
-  imports: [CommonModule, RouterModule, ReactiveFormsModule, HttpClientModule],
-  exports: [NavBarComponent, BlogComponent, BlogListComponent, BlogPostComponent],
+	declarations: [NavBarComponent, BlogComponent, BlogListComponent, LoaderComponent, BlogPostComponent],
+	imports: [CommonModule, RouterModule, ReactiveFormsModule, HttpClientModule],
+	exports: [NavBarComponent, BlogComponent, BlogListComponent, BlogPostComponent],
 })
 export class NgBlogModule {}

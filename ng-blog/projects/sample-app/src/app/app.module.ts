@@ -7,9 +7,9 @@ import { NgBlogModule } from 'projects/ng-blog/src/public-api';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
-  imports: [BrowserModule, AppRoutingModule, NgBlogModule],
-  providers: [],
-  bootstrap: [AppComponent],
+	declarations: [AppComponent, HomeComponent],
+	imports: [BrowserModule, AppRoutingModule, NgBlogModule],
+	providers: [],
+	bootstrap: [AppComponent],
 })
 export class AppModule {}

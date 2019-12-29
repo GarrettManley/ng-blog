@@ -1,94 +1,90 @@
 @import '../../styles/variables';
 @import '../../../../../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 
-
 .card {
-  position: relative;
+	position: relative;
 
-  .edit {
-    align-self: flex-end;
-    color: $color-dark;
+	.edit {
+		align-self: flex-end;
+		color: $color-dark;
 
-    font-size: 0.75rem;
+		font-size: 0.75rem;
 
-    &:hover {
-      cursor: pointer;
-      color: $color-primary;
-    }
-  }
+		&:hover {
+			cursor: pointer;
+			color: $color-primary;
+		}
+	}
 
-  .title {
-    padding-bottom: 0.25rem;
-    margin-top: 0;
-    margin-bottom: 1rem;
-    border-bottom: 0.25rem dotted $color-dark;
-    align-self: flex-start;
-  }
+	.title {
+		padding-bottom: 0.25rem;
+		margin-top: 0;
+		margin-bottom: 1rem;
+		border-bottom: 0.25rem dotted $color-dark;
+		align-self: flex-start;
+	}
 
-  .author {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-  }
+	.author {
+		margin-top: 0;
+		margin-bottom: 0.5rem;
+	}
 
-  .blog {
-    p {
-      padding-bottom: 1rem !important;
-    }
-  }
+	.blog {
+		p {
+			padding-bottom: 1rem !important;
+		}
+	}
 
-  .post-date {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 1rem;
-    font-size: 0.75rem;
-  }
+	.post-date {
+		display: flex;
+		justify-content: flex-end;
+		margin-top: 1rem;
+		font-size: 0.75rem;
+	}
 
-  .edit-blog {
-    display: flex;
-    flex-direction: column;
-    margin-top: 1rem;
+	.edit-blog {
+		display: flex;
+		flex-direction: column;
+		margin-top: 1rem;
 
-    .error {
-      color: $color-error;
-      @include roboto(true);
-      margin-top: 0.5rem;
-      font-size: 0.75rem;
-    }
+		.error {
+			color: $color-error;
+			@include roboto(true);
+			margin-top: 0.5rem;
+			font-size: 0.75rem;
+		}
 
+		textarea {
+			resize: vertical;
+			padding: 0rem 1rem;
+			height: 10rem;
+			border: none;
+			background: $color-light;
+			color: $color-dark;
+			border-radius: 1rem 1rem 0rem 1rem;
+		}
 
+		.buttons {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-top: 1rem;
 
-    textarea {
-      resize: vertical;
-      padding: 0rem 1rem;
-      height: 10rem;
-      border: none;
-      background: $color-light;
-      color: $color-dark;
-      border-radius: 1rem 1rem 0rem 1rem;
-    }
+			.trash {
+				&:hover {
+					color: $color-error;
+					cursor: pointer;
+				}
 
-    .buttons {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 1rem;
+				span {
+					margin-left: 0.25rem;
+					@include ubuntu;
 
-      .trash {
-
-        &:hover {
-          color: $color-error;
-          cursor: pointer;
-        }
-
-        span {
-          margin-left: 0.25rem;
-          @include ubuntu;
-
-          &:hover {
-            color: $color-error;
-          }
-        }
-      }
-    }
-  }
+					&:hover {
+						color: $color-error;
+					}
+				}
+			}
+		}
+	}
 }

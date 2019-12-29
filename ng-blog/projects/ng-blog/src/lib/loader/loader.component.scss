@@ -1,70 +1,67 @@
 @import '../../styles/variables';
 @import '../../../../../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 
-
 .background {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-color: $color-dark-trans;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @include roundedCorners;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background-color: $color-dark-trans;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	@include roundedCorners;
 
-  .loader {
-    $size: 1rem;
-    $spacer: 1.5;
-    $duration: 1.5s;
-    $delay: $duration / 4;
+	.loader {
+		$size: 1rem;
+		$spacer: 1.5;
+		$duration: 1.5s;
+		$delay: $duration / 4;
 
-    color: $color-light;
-    font-size: 1rem;
-    margin: ($size * 2) auto;
-    position: relative;
-    animation-delay: -$delay / 4;
-    border-radius: 50%;
-    width: $size;
-    height: $size;
-    animation-fill-mode: both;
-    animation: load $duration infinite ease-in-out;
+		color: $color-light;
+		font-size: 1rem;
+		margin: ($size * 2) auto;
+		position: relative;
+		animation-delay: -$delay / 4;
+		border-radius: 50%;
+		width: $size;
+		height: $size;
+		animation-fill-mode: both;
+		animation: load $duration infinite ease-in-out;
 
+		&:before,
+		&:after {
+			border-radius: 50%;
+			width: $size;
+			height: $size;
+			animation-fill-mode: both;
+			animation: load $duration infinite ease-in-out;
+			content: '';
+			position: absolute;
+			top: 0;
+		}
 
-    &:before,
-    &:after {
-      border-radius: 50%;
-      width: $size;
-      height: $size;
-      animation-fill-mode: both;
-      animation: load $duration infinite ease-in-out;
-      content: '';
-      position: absolute;
-      top: 0;
-    }
+		&:before {
+			left: -$size * $spacer;
+			animation-delay: -$delay;
+		}
 
-    &:before {
-      left: -$size * $spacer;
-      animation-delay: -$delay;
-    }
+		&:after {
+			left: $size * $spacer;
+			animation-delay: $delay / 1.5;
+		}
 
-    &:after {
-      left: $size * $spacer;
-      animation-delay: $delay / 1.5;
-    }
+		@keyframes load {
+			0%,
+			70%,
+			100% {
+				box-shadow: 0 $size 0 -1.3rem;
+			}
 
-    @keyframes load {
-
-      0%,
-      70%,
-      100% {
-        box-shadow: 0 $size 0 -1.3rem;
-      }
-
-      30% {
-        box-shadow: 0 $size 0 0;
-      }
-    }
-  }
+			30% {
+				box-shadow: 0 $size 0 0;
+			}
+		}
+	}
 }

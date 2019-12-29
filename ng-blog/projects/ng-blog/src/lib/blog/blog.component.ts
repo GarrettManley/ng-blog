@@ -16,7 +16,6 @@ export class BlogComponent implements OnInit, AfterContentInit, AfterViewChecked
 	@Input()
 	loading: boolean;
 
-	// tslint:disable-next-line: variable-name
 	private _errorMessage: string;
 	public get errorMessage(): string {
 		return this._errorMessage;

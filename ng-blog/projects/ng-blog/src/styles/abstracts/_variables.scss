@@ -8,8 +8,8 @@ $color-primary: rgb(45, 194, 189);
 
 $light-adjustment: 80%;
 
-@if lightness($color-primary)>50% {
-  $light-adjustment: 65%;
+@if lightness($color-primary) >50% {
+	$light-adjustment: 65%;
 }
 
 // light color

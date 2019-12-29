@@ -21,7 +21,7 @@ export class NavBarComponent implements OnInit {
 
 	clickNewBlog() {
 		this.blogService.createNewBlog().then(id => {
-			this.router.navigate([`/blog/${id}`]);
+			this.router.navigate([`/blog/${id}`], { queryParams: { editing: true } });
 		});
 	}
 }

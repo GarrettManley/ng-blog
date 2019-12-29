@@ -1,7 +1,8 @@
 import { AfterContentInit, AfterViewChecked, Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import marked from 'marked';
+import { map } from 'rxjs/operators';
 import { BlogService } from '../core/blog.service';
 import { IBlog } from './blog.interface';
 
@@ -30,12 +31,16 @@ export class BlogComponent implements OnInit, AfterContentInit, AfterViewChecked
 	editError: string = null;
 	editor = new FormControl('');
 
-	constructor(private blogService: BlogService, private router: Router) {}
+	constructor(private blogService: BlogService, private router: Router, private route: ActivatedRoute) {}
 
 	ngOnInit(): void {
 		this.editor.valueChanges.subscribe(() => {
 			this.blog.content = this.editor.value.split(/\n/g);
 		});
+
+		this.route.queryParamMap
+			.pipe(map(parms => parms.get('editing')))
+			.subscribe(value => (this.isEditing = JSON.parse(value)));
 	}
 
 	ngAfterContentInit(): void {

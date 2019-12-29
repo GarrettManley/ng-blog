@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { NavLink } from './nav-link';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BlogService } from '../core/blog.service';
+import { NavLink } from './nav-link';
 
 @Component({
 	selector: 'ng-blog-nav-bar',
@@ -14,11 +15,13 @@ export class NavBarComponent implements OnInit {
 	@Input()
 	navLinks: NavLink[];
 
-	constructor(private blogService: BlogService) {}
+	constructor(private blogService: BlogService, private router: Router) {}
 
 	ngOnInit() {}
 
-	async clickNewBlog() {
-		this.blogService.createNewBlog();
+	clickNewBlog() {
+		this.blogService.createNewBlog().then(id => {
+			this.router.navigate([`/blog/${id}`]);
+		});
 	}
 }

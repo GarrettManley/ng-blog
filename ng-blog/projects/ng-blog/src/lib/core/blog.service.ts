@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { IBlog } from '../blog/blog.interface';
-import { BehaviorSubject } from 'rxjs';
-import { MockService } from './mock.service';
-import { HttpClientService } from './http-client.service';
-import uuid from 'uuid/v4';
 import { environment } from 'projects/sample-app/src/environments/environment';
+import { BehaviorSubject } from 'rxjs';
+import uuid from 'uuid/v4';
+import { IBlog } from '../blog/blog.interface';
+import { HttpClientService } from './http-client.service';
+import { MockService } from './mock.service';
 
 @Injectable({
 	providedIn: 'root',
@@ -42,12 +42,13 @@ export class BlogService {
 	 * Generates a new blog post, uploads it to firebase,
 	 * and updates the postID to match the firebase entry key
 	 */
-	public async createNewBlog() {
+	public async createNewBlog(): Promise<string> {
 		const blog: IBlog = this.generateNewBlog();
 		const postID = await this.addBlogAsync(blog);
 
 		if (postID) {
-			this.updateBlogIDAsync(blog.postID, postID);
+			await this.updateBlogIDAsync(blog.postID, postID);
+			return postID;
 		}
 	}
 

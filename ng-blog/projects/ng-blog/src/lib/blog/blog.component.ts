@@ -1,9 +1,9 @@
-import { Component, Input, AfterViewChecked, AfterContentInit, OnInit } from '@angular/core';
-import { IBlog } from './blog.interface';
-import marked from 'marked';
+import { AfterContentInit, AfterViewChecked, Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { BlogService } from '../core/blog.service';
 import { Router } from '@angular/router';
+import marked from 'marked';
+import { BlogService } from '../core/blog.service';
+import { IBlog } from './blog.interface';
 
 @Component({
 	selector: 'ng-blog',

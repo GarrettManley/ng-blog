@@ -83,8 +83,8 @@ export class BlogComponent implements OnInit, AfterContentInit, AfterViewChecked
 	}
 
 	async clickDeleteBlog() {
-		await this.load(() => {
-			this.blogService.deleteBlogAsync(this.blog.postID).catch(error => {
+		await this.load(async () => {
+			await this.blogService.deleteBlogAsync(this.blog.postID).catch(error => {
 				this.editError = error.message;
 			});
 		});

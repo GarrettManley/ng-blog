@@ -66,6 +66,10 @@ export class BlogComponent implements OnInit, AfterContentInit, AfterViewChecked
 		blogContent.innerHTML = marked(content);
 	}
 
+	clickEditBlog() {
+		this.isEditing = true;
+	}
+
 	async clickSaveChanges() {
 		await this.load(async () => {
 			this.blog.content = this.editor.value.split(/\n/g);
@@ -81,10 +85,6 @@ export class BlogComponent implements OnInit, AfterContentInit, AfterViewChecked
 					this.editError = error.message;
 				});
 		});
-	}
-
-	clickEditBlog() {
-		this.isEditing = true;
 	}
 
 	async clickDeleteBlog() {

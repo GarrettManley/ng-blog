@@ -66,7 +66,7 @@ export class BlogComponent implements OnInit, AfterContentInit, AfterViewChecked
 			this.blog.postDate = new Date(Date.now());
 
 			await this.blogService
-				.updateBlogAsync(this.blog.postID)
+				.updateBlogAsync(this.blog)
 				.then(() => {
 					this.isEditing = false;
 					this.editError = null;

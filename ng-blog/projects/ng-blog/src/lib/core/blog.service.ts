@@ -47,7 +47,7 @@ export class BlogService {
 		const postID = await this.addBlogAsync(blog);
 
 		if (postID) {
-			this.updateBlogAsync(blog.postID, postID);
+			this.updateBlogIDAsync(blog.postID, postID);
 		}
 	}
 
@@ -67,18 +67,10 @@ export class BlogService {
 			});
 	}
 
-	public async updateBlogAsync(postID: string, newID: string = null) {
-		const blogKeyPair = this.getBlogAndKey(postID);
-
-		if (newID !== null) {
-			blogKeyPair.blog.postID = newID;
-		}
-
-		await this.http
-			.putAsync(this.config.api.updateBlog + blogKeyPair.key + '.json', blogKeyPair.blog)
-			.catch(error => {
-				throw error;
-			});
+	public async updateBlogAsync(blog: IBlog) {
+		await this.http.putAsync(this.config.api.updateBlog + blog.postID + '.json', blog).catch(error => {
+			throw error;
+		});
 
 		await this.getBlogListAsync();
 	}
@@ -113,6 +105,19 @@ export class BlogService {
 		};
 
 		return blog;
+	}
+
+	private async updateBlogIDAsync(postID: string, newID: string) {
+		const blogKeyPair = this.getBlogAndKey(postID);
+		blogKeyPair.blog.postID = newID;
+
+		await this.http
+			.putAsync(this.config.api.updateBlog + blogKeyPair.key + '.json', blogKeyPair.blog)
+			.catch(error => {
+				throw error;
+			});
+
+		await this.getBlogListAsync();
 	}
 
 	private compareBlogPostDates(a: IBlog, b: IBlog) {

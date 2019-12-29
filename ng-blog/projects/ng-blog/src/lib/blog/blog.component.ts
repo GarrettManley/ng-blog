@@ -39,7 +39,7 @@ export class BlogComponent implements OnInit, AfterContentInit, AfterViewChecked
 		});
 
 		this.route.queryParamMap
-			.pipe(map(parms => parms.get('editing')))
+			.pipe(map(params => params.get('editing')))
 			.subscribe(value => (this.isEditing = JSON.parse(value)));
 	}
 

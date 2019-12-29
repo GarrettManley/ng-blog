@@ -18,7 +18,7 @@
 		<div class="blog" [id]="blog.postID"></div>
 
 		<div class="post-date">
-			<span>Posted: {{ blog.postDate }}</span>
+			<span>Posted: {{ blog.postDate | date: 'short' }}</span>
 		</div>
 		<ng-blog-loader [hidden]="!loading"></ng-blog-loader>
 	</div>

@@ -31,22 +31,22 @@
 	},
 	"homepage": "https://github.com/GarrettManley/ng-blog#readme",
 	"dependencies": {
-		"@angular/cli": "^8.1.1",
+		"@angular/cli": "^8.3.22",
 		"prettier": "^1.19.1",
-		"uuid": "^3.3.2"
+		"uuid": "^3.3.3"
 	},
 	"devDependencies": {
-		"@types/chai": "^4.1.7",
+		"@types/chai": "^4.2.7",
 		"@types/mocha": "^5.2.7",
-		"@types/node": "^12.6.2",
-		"@types/uuid": "^3.4.5",
+		"@types/node": "^12.12.24",
+		"@types/uuid": "^3.4.6",
 		"chai": "^4.2.0",
-		"del": "^5.0.0",
-		"mocha": "^6.1.4",
-		"nodemon": "^1.19.1",
-		"ts-node": "^8.3.0",
+		"del": "^5.1.0",
+		"mocha": "^6.2.2",
+		"nodemon": "^1.19.4",
+		"ts-node": "^8.6.1",
 		"tsc": "^1.20150623.0",
-		"typedoc": "^0.15.5",
-		"typescript": "^3.5.3"
+		"typedoc": "^0.15.8",
+		"typescript": "^3.7.4"
 	}
 }

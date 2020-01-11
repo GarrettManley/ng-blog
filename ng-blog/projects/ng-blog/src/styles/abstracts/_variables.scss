@@ -4,11 +4,11 @@ $gutter: 20%;
 // Colors
 
 // Primary Color
-$color-primary: rgb(45, 194, 189);
+$color-primary: rgb(194, 45, 132);
 
 $light-adjustment: 80%;
 
-@if lightness($color-primary) >50% {
+@if lightness($color-primary)>50% {
 	$light-adjustment: 65%;
 }
 

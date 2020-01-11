@@ -1,7 +1,7 @@
 <div class="container">
 	<div *ngIf="this.blog.content" class="card">
-		<i class="far fa-edit edit" *ngIf="!isEditing" (click)="clickEditBlog()">edit</i>
-		<i class="far fa-edit edit" *ngIf="!isEditing" [routerLink]="'/blog/' + blog.postID">Go To Post</i>
+		<i class="far fa-edit edit" *ngIf="!isEditing" (click)="clickEditBlog()"><span>edit</span></i>
+		<i class="far fa-edit edit" *ngIf="!isEditing" [routerLink]="'/blog/' + blog.postID"><span>Go To Post</span></i>
 
 		<div class="edit-blog" *ngIf="isEditing">
 			<textarea [formControl]="editor"></textarea>
